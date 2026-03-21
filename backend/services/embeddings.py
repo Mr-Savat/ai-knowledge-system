@@ -100,7 +100,7 @@ def add_documents_to_vector_store(
 
 def search_similar_documents(
     query: str,
-    top_k: int = None,
+    k: int = None,  # Change from top_k to k to match the import in rag.py
     collection_name: str = "knowledge",
     source_id: str = None,
 ) -> List[dict]:
@@ -109,7 +109,7 @@ def search_similar_documents(
 
     Args:
         query: User's question
-        top_k: Number of results to return (default from settings)
+        k: Number of results to return (default from settings)
         collection_name: Vector collection name
         source_id: Optional filter by source ID
 
@@ -126,7 +126,7 @@ def search_similar_documents(
     # Search
     results = vector_store.similarity_search(
         query,
-        k=top_k or settings.max_retrieved_chunks,
+        k=k or settings.max_retrieved_chunks,  # Use k parameter
         filter=filter_dict if filter_dict else None,
     )
 

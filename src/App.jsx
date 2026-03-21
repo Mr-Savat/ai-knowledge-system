@@ -6,6 +6,7 @@ import ChatPage from './pages/ChatPage';
 import AdminKnowledgePage from './pages/admin/AdminKnowledgePage';
 import AdminSourcesPage from './pages/admin/AdminSourcesPage'; // 1. Import the page
 import AdminLoginPage from './pages/admin/AdminLoginPage';
+import NotFoundPage from './pages/notfondpage/NotFoundPage';
 
 const App = () => {
   return (
@@ -29,10 +30,12 @@ const App = () => {
             <Route path="knowledge" element={<AdminKnowledgePage />} />
             <Route path="sources" element={<AdminSourcesPage />} />
             <Route path="settings" element={<div className="p-8">Settings Coming Soon...</div>} />
-            <Route path="*" element={<Navigate to="/admin" replace />} />
+            {/* <Route path="*" element={<Navigate to="/admin" replace />} /> */}
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
 
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+          <Route path="*" element={<NotFoundPage />} />
 
         </Routes>
       </div>
