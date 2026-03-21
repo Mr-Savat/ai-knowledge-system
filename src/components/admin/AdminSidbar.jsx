@@ -41,10 +41,10 @@ export default function AdminSidebar() {
               onClick={() => navigate(item.path)}
               className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl text-sm font-bold transition-all group
                 ${active 
-                  ? 'bg-[#faf5ff] text-[#8200db]' 
+                  ? 'bg-admin-50 text-[#8200db]' 
                   : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'}`}
             >
-              <div className={`p-1.5 rounded-lg transition-colors ${active ? 'bg-[#f3e8ff] text-[#9810fa]' : 'bg-transparent group-hover:bg-gray-100'}`}>
+              <div className={`p-1.5 rounded-lg transition-colors ${active ? 'bg-admin-100 text-[#9810fa]' : 'bg-transparent group-hover:bg-gray-100'}`}>
                 <item.icon size={18} />
               </div>
               {item.label}
@@ -55,7 +55,7 @@ export default function AdminSidebar() {
 
       {/* Footer Status Card - Like your examples */}
       <div className="p-4 mt-auto">
-        <div className="p-4 rounded-4xl bg-[#faf5ff] border border-[#f3e8ff] relative overflow-hidden">
+        <div className="p-4 rounded-4xl bg-admin-50 border border-admin-100 relative overflow-hidden">
           {/* Subtle background circle effect */}
           <div className="absolute -right-2 -top-2 w-12 h-12 bg-[#9810fa]/5 rounded-full" />
           
